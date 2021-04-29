@@ -32,7 +32,6 @@ google_analytics:
 theme: jekyll-theme-minimal
 
 # Build settings
-#theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
