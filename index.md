@@ -7,10 +7,11 @@ layout: default
 * React JS is a front-end JavaScript library developed by Facebook in 2011.
 * It follows the component based approach which helps in building reusable UI components.
 * It is used for developing complex and interactive web and mobile UI.
+* It has been designed from the ground up with performance in mind.
 * It was open-sourced in 2015. 
 * It has one of the largest communities supporting it.
 
-# What are the advantages of using React?
+# What are the advantages of using React JS?
 
 * ## Use of Virtual DOM to improve efficiency
 React uses virtual DOM to render the view. 
@@ -23,10 +24,60 @@ React uses component-based architecture for developing applications. Components 
 * ## Huge ecosystem of libraries to choose from
 React provides you the freedom to choose the tools, libraries, and architecture for developing an application based on your requirement.
 
+# What is Components in React JS
+
+React Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+
+Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+
+Below is a sample component written in ES6 class to display a welcome message on the screen.
+
+```jsx
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name} </h1>;
+  }
+}
+
+const element = <Welcome name="Jacob" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
 
 # What is Virtual DOM
 
 As the name suggests, virtual DOM is a virtual representation of the real DOM. It is a node tree that lists the elements, their attributes and content as Objects and their properties. Each time the data changes in a react app, a new virtual DOM gets created. Creating a virtual DOM is much faster than rendering the UI inside the browser. Therefore, with the use of virtual DOM, the efficiency of the app improves.
+
+In other words, virtual DOM is just lightweight JavaScript objects, with recursive structure.
+
+For example
+
+```jsx
+console.log(React.createElement(
+    'div',
+    null,
+    React.createElement('span', null),
+    React.createElement('button', null)
+))
+```
+
+will result in
+
+```json
+{
+    "type":"div",
+    "key":null,
+    "ref":null,
+    "props":{
+        "children": [
+            {"type":"span","key":null,"ref":null,"props":{}},
+            {"type":"button","key":null,"ref":null,"props":{}}
+        ]
+    }
+}
+```
 
 # Explain the working of Virtual DOM.
 
@@ -55,6 +106,7 @@ render(){
 }
 ```
 
+JSX allows you to mix HTML with Javascript
 **Note:** _We can create react applications without using JSX as well._
 
 ```js
